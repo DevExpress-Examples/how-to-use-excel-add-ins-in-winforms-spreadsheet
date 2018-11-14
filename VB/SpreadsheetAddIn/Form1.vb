@@ -98,32 +98,32 @@ Namespace SpreadsheetAddIn
             End Function
 
             #Region "ICustomFunction Members"
-            Public ReadOnly Property Name() As String
+            Public ReadOnly Property Name() As String Implements IFunction.Name
                 Get
                     Return name_Renamed
                 End Get
             End Property
-            Public ReadOnly Property Parameters() As ParameterInfo()
+            Public ReadOnly Property Parameters() As ParameterInfo() Implements IFunction.Parameters
                 Get
                     Return parameters_Renamed
                 End Get
             End Property
-            Public ReadOnly Property ReturnType() As ParameterType
+            Public ReadOnly Property ReturnType() As ParameterType Implements IFunction.ReturnType
                 Get
                     Return ParameterType.Value
                 End Get
             End Property
             ' Do not reevaluate cells on every recalculation.
-            Public ReadOnly Property Volatile() As Boolean
+            Public ReadOnly Property Volatile() As Boolean Implements IFunction.Volatile
                 Get
                     Return False
                 End Get
             End Property
-            Public Function GetName(ByVal culture As CultureInfo) As String
+            Public Function GetName(ByVal culture As CultureInfo) As String Implements IFunction.GetName
                 Return name_Renamed
             End Function
 
-            Public Function Evaluate(ByVal parameters As IList(Of ParameterValue), ByVal context As EvaluationContext) As ParameterValue
+            Public Function Evaluate(ByVal parameters As IList(Of ParameterValue), ByVal context As EvaluationContext) As ParameterValue Implements IFunction.Evaluate
                 Dim args As New List(Of Object)()
                 ' Provide conversion of function parameters for further evaluation in Excel.
                 For i As Integer = 0 To parameters.Count - 1
@@ -210,18 +210,16 @@ Namespace SpreadsheetAddIn
                 Return result
             End Function
 
-            Private Function ConvertResultValueCore(ByVal value As Object) As DevExpress.Spreadsheet.CellValue
+            Private Function ConvertResultValueCore(ByVal value As Object) As CellValue
                 If value Is Nothing Then
-                    Return DevExpress.Spreadsheet.CellValue.Empty
+                    Return CellValue.Empty
                 End If
                 If TypeOf value Is Integer Then
-                    If ErrorToValueDictonary.ContainsKey(value) Then
-                        Return ErrorToValueDictonary(value)
-                    Else
-                        Return value
+                    If ErrorToValueDictonary.ContainsKey(CInt(value)) Then
+                        Return ErrorToValueDictonary(CInt(value))
                     End If
                 End If
-                Return value
+                Return CellValue.FromObject(value)
             End Function
             #End Region
 
