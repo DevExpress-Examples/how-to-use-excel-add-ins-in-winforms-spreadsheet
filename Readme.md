@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [ExcelAppHelper.cs](./CS/SpreadsheetAddIn/ExcelAppHelper.cs) (VB: [ExcelAppHelper.vb](./VB/SpreadsheetAddIn/ExcelAppHelper.vb))
+* [Form1.cs](./CS/SpreadsheetAddIn/Form1.cs) (VB: [Form1.vb](./VB/SpreadsheetAddIn/Form1.vb))
+<!-- default file list end -->
 # How to use Excel Add-Ins in the Spreadsheet Control
 
 
