@@ -159,7 +159,7 @@ namespace SpreadsheetAddIn
                 return result;
             }
 
-            object[,] ConvertRefParameter(DevExpress.Spreadsheet.Range parameter)
+            object[,] ConvertRefParameter(DevExpress.Spreadsheet.CellRange parameter)
             {
                 int height = parameter.RowCount;
                 int width = parameter.ColumnCount;

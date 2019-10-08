@@ -173,10 +173,10 @@ Namespace SpreadsheetAddIn
                 Return result
             End Function
 
-            Private Function ConvertRefParameter(ByVal parameter As DevExpress.Spreadsheet.Range) As Object(,)
+            Private Function ConvertRefParameter(ByVal parameter As DevExpress.Spreadsheet.CellRange) As Object(,)
                 Dim height As Integer = parameter.RowCount
                 Dim width As Integer = parameter.ColumnCount
-                Dim result(,) As Object = CType(Array.CreateInstance(GetType(Object), { height, width }, { 1, 1 }), Object(,))
+                Dim result(,) As Object = CType(Array.CreateInstance(GetType(Object), {height, width}, {1, 1}), Object(,))
                 For i As Integer = 0 To height - 1
                     For j As Integer = 0 To width - 1
                         Dim value As DevExpress.Spreadsheet.CellValue = parameter(i, j).Value
@@ -185,9 +185,9 @@ Namespace SpreadsheetAddIn
                 Next i
                 Return result
             End Function
-            #End Region
+#End Region
 
-            #Region "object->ParameterValue conversion"
+#Region "object->ParameterValue conversion"
             ' Convert Excel parameters to the SpreadsheetControl's parameters.
             Private Function ConvertResultValue(ByVal value As Object) As ParameterValue
                 Dim result As ParameterValue
