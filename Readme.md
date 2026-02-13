@@ -20,7 +20,7 @@ The application runs Microsoft® Excel® in the background to evaluate a custom 
 
 * [How to: Use Excel Add-Ins in the Spreadsheet Control](https://docs.devexpress.com/WindowsForms/16477/controls-and-libraries/spreadsheet/examples/formulas/how-to-use-excel-add-ins-in-the-spreadsheet-control)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-use-excel-add-ins-in-winforms-spreadsheet&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-use-excel-add-ins-in-winforms-spreadsheet&~~~was_helpful=no)
 
